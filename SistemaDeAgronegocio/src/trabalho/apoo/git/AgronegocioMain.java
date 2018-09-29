@@ -6,6 +6,7 @@ public class AgronegocioMain {
 		// TODO Auto-generated method stub
 		System.out.println("Testando o Git");
 		System.out.println("teste commit");
+		System.out.println("teste nome");
 	}
 
 }
