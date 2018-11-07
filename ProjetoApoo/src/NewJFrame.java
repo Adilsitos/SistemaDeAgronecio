@@ -150,15 +150,16 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String usuario, sql;
+        String usuario, sql_1,sql_2;
         int senha;
         
          
         usuario = jTextField2.getText();
         senha = Integer.parseInt(jTextField3.getText());
         
-        sql = ("select * from pessoa where pes_login = '"+usuario+"' and pes_senha = "+senha+" ");
-        if(bdc.setResult(sql) == 1){
+        sql_1 = ("select fis_cpf from fisica where pes_login = '"+usuario+"' and pes_senha = "+senha+" ");
+        sql_2 = ("select jur_cnpj from juridica where pes_login = '"+usuario+"' and pes_senha = "+senha+" ");
+        if(bdc.BuscaCpfFis(sql_1) != 0 || bdc.BuscaCnpjJur(sql_2) != 0){
            JOptionPane.showMessageDialog(null,"Login","Login",JOptionPane.INFORMATION_MESSAGE);
         }else{
             

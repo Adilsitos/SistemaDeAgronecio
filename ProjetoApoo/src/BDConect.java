@@ -50,7 +50,7 @@ public class BDConect{
 		//updSQL("delete from clientes where pk_cli = 4");
 		//updSQL("update clientes set debito = 0 where pk_cli = 700");
 		//updSQL("update clientes set salario = 0 where pk_cli = 700");
-		//setResult("select * from clientes");
+		//System.out.print(setResult("select fis_cpf from fisica where pes_login = 'aaa' and pes_senha = 123 "));
 	}
 	
 
@@ -89,7 +89,7 @@ public class BDConect{
 
 
 	//metodo para a execucao de uma consulta
-	public static int setResult(String sql){
+	public static int BuscaCpfFis(String sql){
 		ResultSet result = null;
                    int x = 0;
 		try{
@@ -106,7 +106,7 @@ public class BDConect{
                 
 		try{
 			while(result.next()){
-                             x = 1;
+                             x = +result.getInt("fis_cpf");
                             //System.out.println("\n-CPF:"+ result.getInt("cpf") + "\n-Nome:"+result.getString("nome")+ "\n-Idade:"+result.getInt("idade")+ "\n-Sexo:"+result.getString("sexo"));       
 			}
 		}
@@ -114,7 +114,35 @@ public class BDConect{
 			System.out.println("Error de SQL "+errSql+"! -- Erro na Consulta");
 			System.exit(0);	
 		}
-
+      
+               return x;
+    	}
+        
+        public static int BuscaCnpjJur(String sql){
+		ResultSet result = null;
+                   int x = 0;
+		try{
+			getConect();
+			result = statement.executeQuery(sql);
+			close();
+			
+		}	
+		catch(SQLException erro){
+			System.out.println("\n\nErro de SQL BDConecta "+erro+"! -- de SQL em BDConecta");
+			System.exit(0);
+		}
+       
+                
+		try{
+			while(result.next()){
+                             x = +result.getInt("jur_cnpj");
+                           }
+		}
+		catch(SQLException errSql){
+			System.out.println("Error de SQL "+errSql+"! -- Erro na Consulta");
+			System.exit(0);	
+		}
+      
                return x;
     	}
         
