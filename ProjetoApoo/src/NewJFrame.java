@@ -161,11 +161,12 @@ public class NewJFrame extends javax.swing.JFrame {
         senha = Integer.parseInt(jTextField3.getText());
         
         sql_1 = ("select cpf from pessoa where pes_login = '"+usuario+"' and pes_senha = "+senha+" ");
+        sql_2 = ("select cnpj from pessoa where pes_login = '"+usuario+"' and pes_senha = "+senha+" ");
       
-        if(bdc.BuscaCpfFis(sql_1)!= 0){
+        if(bdc.BuscaCpfFis(sql_1)!= 0 || bdc.BuscaCnpjJur(sql_2)!= 0){
            JOptionPane.showMessageDialog(null,"Login","Login",JOptionPane.INFORMATION_MESSAGE);
         }else{
-            
+          JOptionPane.showMessageDialog(null,"ERRO","ERRO",JOptionPane.INFORMATION_MESSAGE);  
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

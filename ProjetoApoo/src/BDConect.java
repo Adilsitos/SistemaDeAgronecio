@@ -15,7 +15,7 @@ public class BDConect{
 	//Dados do SGBD
 	static String  usuario = "postgres";
 	//static String  senha  = "postgres"; //- Postgres 9.???
-	static String  senha  = "utfpr";
+	static String  senha  = "monster10";
 	//static String url = "jdbc:postgresql://localhost:5432/BDCom"; // nome da fonte de dados - Postgres 9.??
 	static String url = "jdbc:postgresql://localhost:5432/agro"; // nome da fonte de dados - Postgres 10.??
 	
@@ -51,6 +51,9 @@ public class BDConect{
 		//updSQL("update clientes set debito = 0 where pk_cli = 700");
 		//updSQL("update clientes set salario = 0 where pk_cli = 700");
 		//System.out.print(setResult("select fis_cpf from fisica where pes_login = 'aaa' and pes_senha = 123 "));
+                 int y = BuscaCnpjJur("select cnpj from pessoa where pes_login = 'aa' and pes_senha =4444 ");
+                 System.out.println(y);
+                
 	}
 	
 
@@ -135,7 +138,7 @@ public class BDConect{
                 
 		try{
 			while(result.next()){
-                             x = +result.getInt("jur_cnpj");
+                             x = +result.getInt("cnpj");
                            }
 		}
 		catch(SQLException errSql){
