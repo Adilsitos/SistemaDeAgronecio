@@ -141,7 +141,10 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
         // TODO add your handling code here:
+        Pessoa frame = new Pessoa();
         
+        frame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_CadastrarActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -157,9 +160,9 @@ public class NewJFrame extends javax.swing.JFrame {
         usuario = jTextField2.getText();
         senha = Integer.parseInt(jTextField3.getText());
         
-        sql_1 = ("select fis_cpf from fisica where pes_login = '"+usuario+"' and pes_senha = "+senha+" ");
-        sql_2 = ("select jur_cnpj from juridica where pes_login = '"+usuario+"' and pes_senha = "+senha+" ");
-        if(bdc.BuscaCpfFis(sql_1) != 0 || bdc.BuscaCnpjJur(sql_2) != 0){
+        sql_1 = ("select cpf from pessoa where pes_login = '"+usuario+"' and pes_senha = "+senha+" ");
+      
+        if(bdc.BuscaCpfFis(sql_1)!= 0){
            JOptionPane.showMessageDialog(null,"Login","Login",JOptionPane.INFORMATION_MESSAGE);
         }else{
             

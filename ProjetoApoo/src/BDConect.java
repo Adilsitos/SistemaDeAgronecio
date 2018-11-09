@@ -15,9 +15,9 @@ public class BDConect{
 	//Dados do SGBD
 	static String  usuario = "postgres";
 	//static String  senha  = "postgres"; //- Postgres 9.???
-	static String  senha  = "monster10";
+	static String  senha  = "utfpr";
 	//static String url = "jdbc:postgresql://localhost:5432/BDCom"; // nome da fonte de dados - Postgres 9.??
-	static String url = "jdbc:postgresql://localhost:5432/Agro"; // nome da fonte de dados - Postgres 10.??
+	static String url = "jdbc:postgresql://localhost:5432/agro"; // nome da fonte de dados - Postgres 10.??
 	
 
 	//m�todo para estabelecer uma conex�o com SGBD
@@ -106,7 +106,7 @@ public class BDConect{
                 
 		try{
 			while(result.next()){
-                             x = +result.getInt("fis_cpf");
+                             x = +result.getInt("cpf");
                             //System.out.println("\n-CPF:"+ result.getInt("cpf") + "\n-Nome:"+result.getString("nome")+ "\n-Idade:"+result.getInt("idade")+ "\n-Sexo:"+result.getString("sexo"));       
 			}
 		}
