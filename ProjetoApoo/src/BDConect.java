@@ -51,8 +51,8 @@ public class BDConect{
 		//updSQL("update clientes set debito = 0 where pk_cli = 700");
 		//updSQL("update clientes set salario = 0 where pk_cli = 700");
 		//System.out.print(setResult("select fis_cpf from fisica where pes_login = 'aaa' and pes_senha = 123 "));
-                 int y = BuscaCnpjJur("select cnpj from pessoa where pes_login = 'aa' and pes_senha =4444 ");
-                 System.out.println(y);
+                // int y = BuscaCnpjJur("select cnpj from pessoa where pes_login = 'aa' and pes_senha =4444 ");
+                // System.out.println(y);
                 
 	}
 	

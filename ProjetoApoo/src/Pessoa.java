@@ -308,7 +308,7 @@ BDConect bdc = new BDConect();
         p.setTelefone(Integer.parseInt(jTextField5.getText()));
         p.setCpf(Integer.parseInt(jTextField7.getText()));
         p.setCnpj(Integer.parseInt(jTextField8.getText()));
-         if( (bdc.inSQL("insert into pessoa values ("+" '"+p.getLogin()+" ' " +   ","+p.getSenha()+"," + " '" +p.getNome()+" ' " +    ","+p.getIdade()+","+"'"+p.getSexo()+" ' "+","+ " '"+p.getEnd()+" ' "+"," +p.getTelefone()+", "+" '"+p.getTipo()+" ' " +", "+p.getCpf()+", "+p.getCnpj()+" )"))==false)
+         if( (bdc.inSQL("insert into pessoa values (" +"'"+p.getLogin()+" ' " +   ","+p.getSenha()+"," + " '" +p.getNome()+" ' " +    ","+p.getIdade()+","+"'"+p.getSexo()+" ' "+","+ " '"+p.getEnd()+" ' "+"," +p.getTelefone()+", "+" '"+p.getTipo()+" ' " +", "+p.getCpf()+", "+p.getCnpj()+" )"))==false)
           {//          if( (bdc.inSQL("insert into pessoa values ("+" '"+p.getLogin()+" ' " +   ","+p.getSenha()+"," + " '" +p.getNome()+" ' " +    ","+p.getIdade()+","+"'"+p.getSexo()+" ' "+","+ " '"+p.getEnd()+" ' "+"," +p.getTelefone()+", "+" '"+p.getTipo()+" ' " +" )"))==false)
 
                     JOptionPane.showMessageDialog(null,"Cadastrado com sucesso","Cadastro",JOptionPane.INFORMATION_MESSAGE);
