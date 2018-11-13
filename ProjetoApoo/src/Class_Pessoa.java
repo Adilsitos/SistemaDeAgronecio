@@ -17,16 +17,16 @@ import javafx.stage.Stage;
  * @author carlos
  */
 public class Class_Pessoa{
-        private int senha;
-        private String login;
-        private String nome;
-        private int idade;
-        private String sexo;
-        private String end;
-        private String tipo;
-        private int telefone;
-        private int cpf;
-        private int cnpj;
+      String senha;
+         String login;
+         String nome;
+         int idade;
+         String sexo;
+         String end;
+         String tipo;
+         int telefone;
+          int cpf;
+           int cnpj;
 
     public int getCpf() {
         return cpf;
@@ -49,7 +49,7 @@ public class Class_Pessoa{
        return end;
     }
 
-    public void setSenha(int senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 
@@ -81,7 +81,7 @@ public class Class_Pessoa{
         this.telefone = telefone;
     }
 
-    public int getSenha() {
+    public String getSenha() {
         return senha;
     }
 

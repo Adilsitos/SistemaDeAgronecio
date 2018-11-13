@@ -51,8 +51,8 @@ public class BDConect{
 		//updSQL("update clientes set debito = 0 where pk_cli = 700");
 		//updSQL("update clientes set salario = 0 where pk_cli = 700");
 		//System.out.print(setResult("select fis_cpf from fisica where pes_login = 'aaa' and pes_senha = 123 "));
-                 int y = BuscaCnpjJur("select cnpj from pessoa where pes_login = 'aa' and pes_senha =4444 ");
-                 System.out.println(y);
+                // int y = BuscaCnpjJur("select cnpj from pessoa where pes_login = 'aa' and pes_senha =4444 ");
+                // System.out.println(y);
                 
 	}
 	
@@ -148,23 +148,6 @@ public class BDConect{
       
                return x;
     	}
-        
-       /* public static Boolean escolheTipo(String sql){
-            ResultSet result = null;
-            boolean boolP = true;
-            try{
-			getConect();
-			result = statement.executeQuery(sql);
-			close();
-			
-		}	
-		catch(SQLException erro){
-			System.out.println("\n\nErro de SQL BDConecta "+erro+"! -- de SQL em BDConecta");
-			System.exit(0);
-		}
-                
-            
-        }*/
         
         public static void setAniResult(String sql){
 		ResultSet result = null;
