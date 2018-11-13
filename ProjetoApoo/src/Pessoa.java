@@ -52,7 +52,6 @@ BDConect bdc = new BDConect();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
@@ -64,6 +63,7 @@ BDConect bdc = new BDConect();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,12 +93,6 @@ BDConect bdc = new BDConect();
         jLabel6.setText("Endereco");
 
         jLabel7.setText("Telefone");
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,11 +178,11 @@ BDConect bdc = new BDConect();
                                     .addComponent(jTextField7)
                                     .addComponent(jTextField5)
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2)
                                     .addComponent(jTextField1)
                                     .addComponent(jTextField3)
                                     .addComponent(jTextField4)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                                    .addComponent(jTextField2))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel8)
@@ -267,10 +261,6 @@ BDConect bdc = new BDConect();
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
@@ -308,7 +298,7 @@ BDConect bdc = new BDConect();
         p.setTelefone(Integer.parseInt(jTextField5.getText()));
         p.setCpf(Integer.parseInt(jTextField7.getText()));
         p.setCnpj(Integer.parseInt(jTextField8.getText()));
-         if( (bdc.inSQL("insert into pessoa values (" +"'"+p.getLogin()+" ' " +   ","+p.getSenha()+"," + " '" +p.getNome()+" ' " +    ","+p.getIdade()+","+"'"+p.getSexo()+" ' "+","+ " '"+p.getEnd()+" ' "+"," +p.getTelefone()+", "+" '"+p.getTipo()+" ' " +", "+p.getCpf()+", "+p.getCnpj()+" )"))==false)
+         if( (bdc.inSQL("insert into pessoa values ("+"'"+p.getLogin()+"'"+","+p.getSenha()+","+"'"+p.getNome()+"'"+","+p.getIdade()+","+"'"+p.getSexo()+" ' "+","+ " '"+p.getEnd()+" ' "+"," +p.getTelefone()+", "+" '"+p.getTipo()+" ' " +","+p.getCpf()+","+p.getCnpj()+" )"))==false)
           {//          if( (bdc.inSQL("insert into pessoa values ("+" '"+p.getLogin()+" ' " +   ","+p.getSenha()+"," + " '" +p.getNome()+" ' " +    ","+p.getIdade()+","+"'"+p.getSexo()+" ' "+","+ " '"+p.getEnd()+" ' "+"," +p.getTelefone()+", "+" '"+p.getTipo()+" ' " +" )"))==false)
 
                     JOptionPane.showMessageDialog(null,"Cadastrado com sucesso","Cadastro",JOptionPane.INFORMATION_MESSAGE);

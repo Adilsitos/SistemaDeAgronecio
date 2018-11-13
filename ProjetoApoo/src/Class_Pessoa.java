@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  * @author carlos
  */
 public class Class_Pessoa{
-      int senha;
+      String senha;
          String login;
          String nome;
          int idade;
@@ -49,7 +49,7 @@ public class Class_Pessoa{
        return end;
     }
 
-    public void setSenha(int senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 
@@ -81,7 +81,7 @@ public class Class_Pessoa{
         this.telefone = telefone;
     }
 
-    public int getSenha() {
+    public String getSenha() {
         return senha;
     }
 
