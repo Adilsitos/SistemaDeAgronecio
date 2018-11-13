@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class NewJFrame extends javax.swing.JFrame {
             BDConect bdc = new BDConect();
             InData  indata = new InData();
+            
     /**
      * Creates new form NewJFrame
      */
@@ -83,8 +84,8 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
@@ -93,30 +94,29 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField2)
                             .addComponent(jTextField3)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Cadastrar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jButton1)))
-                .addContainerGap(97, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(47, 47, 47)
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Cadastrar))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(75, 75, 75)
+                            .addComponent(jButton1))))
+                .addGap(97, 97, 97))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
+                .addGap(95, 95, 95)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField3)
-                        .addGap(1, 1, 1))
-                    .addComponent(jLabel1))
-                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(Cadastrar))
@@ -141,10 +141,13 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
         // TODO add your handling code here:
-        Pessoa frame = new Pessoa();
-        
-        frame.setVisible(true);
+        //Pessoa frame = new Pessoa();
+        //frame.setVisible(true);
+        //this.dispose();
+        Opção op = new Opção();
+        op.setVisible(true);
         this.dispose();
+        
     }//GEN-LAST:event_CadastrarActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -153,24 +156,28 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        BDConect bdc = new BDConect();
         String usuario, sql_1,sql_2;
         String senha;
         
          
         usuario = jTextField2.getText();
-        senha = jTextField3.getText(); //Integer.parseInt(jTextField3.getText());
-       
-        sql_1 = ("select cpf from pessoa where pes_login = '"+usuario+"' and pes_senha = "+senha+"");
+        senha = jTextField3.getText();
+        
+        sql_1 = ("select cpf from pessoa where pes_login = '"+usuario+"' and pes_senha = "+senha+" ");
         sql_2 = ("select cnpj from pessoa where pes_login = '"+usuario+"' and pes_senha = "+senha+" ");
-      
+        System.out.println("valor cpf:"+bdc.BuscaCpfFis(sql_1));
+        System.out.println("valor cnpj:"+bdc.BuscaCnpjJur(sql_2));
         if(bdc.BuscaCpfFis(sql_1)!= 0 || bdc.BuscaCnpjJur(sql_2)!= 0){
            JOptionPane.showMessageDialog(null,"Login","Login",JOptionPane.INFORMATION_MESSAGE);
-        }else{
+        }
+        else{
           JOptionPane.showMessageDialog(null,"ERRO","ERRO",JOptionPane.INFORMATION_MESSAGE);  
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
+ 
+    
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
