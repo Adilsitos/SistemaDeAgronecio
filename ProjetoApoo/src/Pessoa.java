@@ -288,7 +288,7 @@ BDConect bdc = new BDConect();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         NewJFrame frame = new NewJFrame();
-         p.setSenha(Integer.parseInt(jTextField2.getText()));
+         p.setSenha(jTextField2.getText());
         p.setLogin(jTextField1.getText());
          p.setNome(jTextField3.getText());
       p.setIdade(Integer.parseInt(jTextField4.getText()));
