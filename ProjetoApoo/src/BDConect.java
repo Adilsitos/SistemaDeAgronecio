@@ -15,7 +15,7 @@ public class BDConect{
 	//Dados do SGBD
 	static String  usuario = "postgres";
 	//static String  senha  = "postgres"; //- Postgres 9.???
-	static String  senha  = "lindonas2";
+	static String  senha  = "monster10";
 	//static String url = "jdbc:postgresql://localhost:5432/BDCom"; // nome da fonte de dados - Postgres 9.??
 	static String url = "jdbc:postgresql://localhost:5432/agro"; // nome da fonte de dados - Postgres 10.??
 	
