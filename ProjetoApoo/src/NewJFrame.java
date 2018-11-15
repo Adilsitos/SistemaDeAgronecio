@@ -14,11 +14,13 @@ import javax.swing.JOptionPane;
 public class NewJFrame extends javax.swing.JFrame {
             BDConect bdc = new BDConect();
             InData  indata = new InData();
+            
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
