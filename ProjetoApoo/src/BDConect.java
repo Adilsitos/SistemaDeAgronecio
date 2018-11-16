@@ -239,6 +239,31 @@ public static Animais setBuscaCPFAni(String sql){
                 return anii;
                                 
     	}*/
+        public static void setResult(String sql){
+		ResultSet result = null;
+		try{
+			getConect();
+			result = statement.executeQuery(sql);
+
+		}
+		catch(SQLException erro){
+			System.out.println("\n\nErro de SQL BDConecta "+erro+"! -- de SQL em BDConecta");
+			System.exit(0);
+		}
+		try{
+		    //Mostra lt = new Mostra();
+                   Mostra x = new Mostra();
+                   x.setVisible(true);
+                   x.fbi(result);
+                    
+                    
+                    //lt.fbi(result);
+		}
+		catch(SQLException errSql){
+			System.out.println("Error de SQL "+errSql+"! -- Erro na Consulta");
+			System.exit(0);
+		}
+    	}
 	
 	//metodo para encerrar a conexao
 	public static void close(){

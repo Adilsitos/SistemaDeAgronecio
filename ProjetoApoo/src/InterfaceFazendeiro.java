@@ -1,5 +1,6 @@
 
 import javax.swing.JOptionPane;
+import oracle.jrockit.jfr.tools.ConCatRepository;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -167,6 +168,10 @@ public class InterfaceFazendeiro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       BDConect con = new BDConect();
+       String sql = "select * from animais";
+                con.setResult(sql);
+            this.dispose();
         
     }//GEN-LAST:event_jButton3ActionPerformed
 

@@ -15,7 +15,7 @@ public class Class_Animal {
     private int idade;
     private String tipo;
     private String raca;
-
+    private int preco;
     /**
      * @return the numRegistro
      */
@@ -23,16 +23,17 @@ public class Class_Animal {
         return numRegistro;
     }
 
-    /**
-     * @param numRegistro the numRegistro to set
-     */
+    public void setPreco(int preco) {
+        this.preco = preco;
+    }
+    public int getPreco() {
+        return preco;
+    }
+
     public void setNumRegistro(int numRegistro) {
         this.numRegistro = numRegistro;
     }
-
-    /**
-     * @return the peso
-     */
+ 
     public int getPeso() {
         return peso;
     }
